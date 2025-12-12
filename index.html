@@ -10,6 +10,29 @@
     <!-- Разместите скрипт для пуш-уведомлений здесь -->
 <button id="init_sub">Подписаться на уведомления</button> // Кнопка подписки
 
+        <script>
+            
+         (function (popupFunc) {
+                var script = document.createElement('script');
+                var firstScript = document.getElementsByTagName('script')[0];
+                var popupFuncName = popupFunc !== 'acpopup' ? '?f=' + popupFunc : '';
+                window[popupFunc] = window[popupFunc] || function () {
+                    (window[popupFunc].actions = window[popupFunc].actions || []).push(arguments);
+                };
+                window[popupFunc].last_init = 1 * new Date()
+                script.async = true;
+                script.src = 'https://pxl.demo.altcraft.com' + '/popup/v1/js/popupLibrary.js' + popupFuncName;
+                firstScript.parentNode.insertBefore(script, firstScript);
+         })('acpopup');
+    
+        </script>
+        <script>
+            
+      acpopup('create', 'AP-dCFuFgE9xm90hqTK');
+      acpopup('show', 'AP-dCFuFgE9xm90hqTK');
+    
+        </script>
+    
 
             <script src=https://pxl.demo.altcraft.com/form/js/embed_v1.js></script>
 <iframe src="https://pxl.demo.altcraft.com/form?form=7ccXXLj4ftVy2thaCCzySB3YVPZ1yL18WdPCnWKYjauwnGJyUaPzjuZ5KF7eeNoqwFakQwQ9DT7mn9FvPdrpZwbz&iframe=1" frameborder="0" name="ak-form-7ccXXLj4ftVy2thaCCzySB3YVPZ1yL18WdPCnWKYjauwnGJyUaPzjuZ5KF7eeNoqwFakQwQ9DT7mn9FvPdrpZwbz" class="ak-form" width="100%" sandbox="allow-same-origin allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation"></iframe>
