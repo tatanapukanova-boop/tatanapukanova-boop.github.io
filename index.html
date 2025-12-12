@@ -10,46 +10,30 @@
     <!-- Разместите скрипт для пуш-уведомлений здесь -->
 <button id="init_sub">Подписаться на уведомления</button> // Кнопка подписки
 
-<div class="ac-popup-overlay">
-    <div class="ac-modal">
-        <div class="ac-modal_content">
-            <h4 class="ac-title">
-                {{popup('copywriting' 'title' 'text')}}
-            </h4>
-            <div class="ac-description">
-                {{popup('copywriting' 'text' 'text')}}
-            </div>
-            <form id="ac-form" class="ac-form">
-                <div class="ac-field">
-                    <label class="ac-label" for="email">
-                        {{popup('copywriting' 'emailLabel' 'text')}}
-                    </label>
-                    <input
-                        id="email"
-                        type="email"
-                        class="ac-input"
-                        name="{{popup('form' 'email' 'fieldData')}}"
-                        placeholder="{{popup('copywriting' 'emailPlaceholder' 'text')}}"
-                    />
-                    <div class="ac-validation-msg" for="email"></div>
-                </div>
-                <div class="ac-form_submit">
-                    <button type="submit" class="ac-button">
-                        {{popup('cta' 'text' 'text')}}
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div class="ac-image">
-            <img
-                class="ac-image_content"
-                src="{{popup('image' 'image' 'image' 'src')}}"
-                alt="{{popup('image' 'image' 'image' 'alt')}}"
-            />
-        </div>
-        {{popup('closeButton' 'closeButton' 'closeBtn')}}
-    </div>
-</div>
+
+        <script>
+            
+         (function (popupFunc) {
+                var script = document.createElement('script');
+                var firstScript = document.getElementsByTagName('script')[0];
+                var popupFuncName = popupFunc !== 'acpopup' ? '?f=' + popupFunc : '';
+                window[popupFunc] = window[popupFunc] || function () {
+                    (window[popupFunc].actions = window[popupFunc].actions || []).push(arguments);
+                };
+                window[popupFunc].last_init = 1 * new Date()
+                script.async = true;
+                script.src = 'https://pxl.demo.altcraft.com' + '/popup/v1/js/popupLibrary.js' + popupFuncName;
+                firstScript.parentNode.insertBefore(script, firstScript);
+         })('acpopup');
+    
+        </script>
+        <script>
+            
+      acpopup('create', 'AP-dCFuFgE9xm90hqTK');
+      acpopup('show', 'AP-dCFuFgE9xm90hqTK');
+    
+        </script>
+    
     
 
             <script src=https://pxl.demo.altcraft.com/form/js/embed_v1.js></script>
